@@ -3,5 +3,3 @@ services:
   runner:
     build:
       dockerfile: runner/Dockerfile
-    volumes:
-     - ${MLFLOW_ARTIFACT_URI}:${MLFLOW_ARTIFACT_URI}
