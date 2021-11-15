@@ -2,9 +2,22 @@
 
 ##@ Setup
 
-.PHONY: setup-superset
-setup-superset: ## Setup Apache Superset
+.PHONY: setup-db
+setup-db: ## Migrate Apache Superset DB
 	poetry run superset db upgrade
+
+.PHONY: setup-admin
+setup-admin: ## Setup Apache Superset admin user
+	poetry run superset fab create-admin --username admin --firstname admin --lastname user --email admin@fab.org --password admin
+
+.PHONY: setup-superset
+setup-superset: setup-db setup-admin ## Setup Apache Superset
+	poetry run superset init
+
+##@ Run
+.PHONY: run-superset
+run-superset: ## Run Apache Superset
+	poetry run superset run -h 0.0.0.0 -p 8088 --with-threads --reload --debugger
 
 ##@ Helpers
 
