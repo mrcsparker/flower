@@ -325,6 +325,6 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,macos,linux,windows,intellij+all,visualstudiocode
 
-./solve/mlflow
-./mlflow-examples
+solve/mlflow
+runner/mlflow-examples
 

@@ -1,5 +1,7 @@
 # Flower
 
+Flower is a sample project that integrates MLFlow with Apache Superset via PostgreSQL.
+
 ## Install
 
 ```sh
