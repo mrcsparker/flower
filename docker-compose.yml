@@ -20,3 +20,21 @@ services:
     build:
       context: ./query
       dockerfile: Dockerfile
+    depends_on:
+      - db
+
+  solve:
+    container_name: solve
+    build:
+      context: ./solve
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+
+  runner:
+    container_name: runner
+    build:
+      context: ./runner
+      dockerfile: Dockerfile
+    depends_on:
+      - db
